@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3940691a85f04774bacf0af93e37ab51
+guid: 7de277f7970225b498a5bcbcbcec6b6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5070963630314172147
-    second: Exit Pixelated_0
+      213: -2598553690568428489
+    second: TileVania Mushroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,17 +46,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -113,38 +113,52 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Exit Pixelated_0
+      name: TileVania Mushroom_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d01d232027150a9b0800000000000000
-      internalID: -5070963630314172147
+      spriteID: 73473e7af2510fbd0800000000000000
+      internalID: -2598553690568428489
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: -15, y: -2}
+      - {x: -5.935295, y: -2}
+      - {x: -6, y: -16}
+      - {x: 6, y: -16}
+      - {x: 6, y: -2}
+      - {x: 15, y: -2}
+      - {x: 16, y: 3}
+      - {x: 15, y: 6}
+      - {x: 12, y: 11}
+      - {x: 8, y: 14}
+      - {x: -6, y: 14}
+      - {x: -11, y: 12}
+      - {x: -14, y: 8}
+      - {x: -16, y: 4}
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Exit Pixelated_0: -5070963630314172147
+      TileVania Mushroom_0: -2598553690568428489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
