@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690205852933319168, guid: 04a4781780106364a9b4d2801e391994, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: Pink Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732170348215434213, guid: 04a4781780106364a9b4d2801e391994, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8916300444280424386, guid: 04a4781780106364a9b4d2801e391994, type: 3}
       propertyPath: m_Color.b

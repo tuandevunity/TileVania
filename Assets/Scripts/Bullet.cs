@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = FindFirstObjectByType<PlayerMovement>();
         xSpeed = player.transform.localScale.x * speed;
-        transform.localScale = new Vector2(Mathf.Sign(xSpeed), 1f);
+        transform.localScale = new Vector2(Mathf.Sign(xSpeed) * transform.localScale.x, transform.localScale.y);
     }
 
     // Update is called once per frame
