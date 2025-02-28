@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private CapsuleCollider2D bodyCollider;
+    // use feetcollider to avoid double jump wall
     private BoxCollider2D feetCollider2D;
     private float gravityScaleAtStart;
     private bool isAlive = true;
@@ -106,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             myAnimator.SetTrigger("Dying");
             rb.velocity = deathKick;
+            FindFirstObjectByType<GameSession>().HandlePlayerDeath();
         }
     }
 
