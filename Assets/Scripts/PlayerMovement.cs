@@ -11,9 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider2D;
     private float gravityScaleAtStart;
+    private bool isAlive = true;
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float climbSpeed;
+    [SerializeField] private Vector2 deathKick;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform gun;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +31,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) return;
         Run();
         FlipSprite();
         ClimbLadder();
+        Die();
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) return;
+        Instantiate(bullet, gun.position, gun.rotation);
+
     }
 
     void OnMove(InputValue value)
     {
+        if (!isAlive) return;
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
@@ -59,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) return;
         if (!feetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
             return;
         if (value.isPressed)
@@ -82,6 +97,16 @@ public class PlayerMovement : MonoBehaviour
 
         bool playerHasHorizoltalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("IsClimbing", playerHasHorizoltalSpeed);
+    }
+
+    void Die()
+    {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            rb.velocity = deathKick;
+        }
     }
 
     
