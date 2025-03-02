@@ -30,6 +30,6 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

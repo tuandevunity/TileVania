@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float climbSpeed;
     [SerializeField] private Vector2 deathKick;
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform gun;
+    [SerializeField] private Gun gun;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider2D = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = rb.gravityScale;
+        /*gun = FindFirstObjectByType<Gun>();*/
+        
     }
 
     // Update is called once per frame
@@ -42,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
     void OnFire(InputValue value)
     {
         if (!isAlive) return;
-        Instantiate(bullet, gun.position, gun.rotation);
+        gun.Shoot();
+       /* Instantiate(bullet, gun.position, gun.rotation);*/
 
     }
 
